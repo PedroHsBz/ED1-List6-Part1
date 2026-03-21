@@ -6,56 +6,69 @@ public class MyArrayList {
         var sc = new Scanner(System.in);
 
         int[] origenArray = {10, 20, 30, 40, 50};
-        int[] modifArray = new int[origenArray.length+1];
-        System.out.println("addFirst, addLast, insertAt");
+        int[] modifArray = new int[origenArray.length];
+
+        System.out.println("Lista inicial:");
+        display(origenArray);
         System.out.println();
+
+        System.out.println("--- addFirst, addLast, insertAt ---");
         System.out.println("Digite o número para o (addFirst, addLast, insertAt): ");
         int number = sc.nextInt();
         System.out.println("Digite o indice para o (insertAt): ");
         int indice = sc.nextInt();
+
+        System.out.print("addFirst: ");
         modifArray = addFirst(origenArray, number);
-        imprimirVetor(modifArray);
+        display(modifArray);
+
+        System.out.print("addLast: ");
         modifArray = addLast(origenArray, number);
-        imprimirVetor(modifArray);
+        display(modifArray);
+
+        System.out.print("insertAt: ");
         modifArray = insertAt(origenArray, indice, number);
-        imprimirVetor(modifArray);
+        display(modifArray);
         System.out.println();
-        System.out.println("removeFirst, removeLast, removeAt, remove");
+
+
+        System.out.println("--- removeFirst, removeLast, removeAt, remove ---");
         System.out.println("Digite o número para o (remover): ");
         number = sc.nextInt();
         System.out.println("Digite o indice para o (removeAt): ");
         indice = sc.nextInt();
+
         modifArray = removeFirst(origenArray);
-        imprimirVetor(modifArray);
+        display(modifArray);
         modifArray = removeLast(origenArray);
-        imprimirVetor(modifArray);
+        display(modifArray);
         modifArray = removeAt(origenArray,indice);
-        imprimirVetor(modifArray);
+        display(modifArray);
         modifArray = remove(origenArray,number);
-        imprimirVetor(modifArray);
+        display(modifArray);
         System.out.println();
 
-        System.out.println("find, get");
+        System.out.println("--- find, get ---");
         System.out.println("Digite o número para o (find): ");
         number = sc.nextInt();
         System.out.println("Digite o indice para o (get): ");
         indice = sc.nextInt();
-        System.out.println(find(origenArray, number));
-        System.out.println(get(origenArray, indice));
+
+        System.out.println("Índice encontrado (find): " + find(origenArray, number));
+        System.out.println("Valor no índice (get): " + get(origenArray, indice));
         System.out.println();
 
-        System.out.println("set");
-        System.out.println("Digite o número para o (set): ");
+        System.out.println("--- set ---");
         number = sc.nextInt();
         System.out.println("Digite o indice para o (set): ");
         indice = sc.nextInt();
         modifArray = set(origenArray, indice, number);
-        imprimirVetor(modifArray);
+        display(modifArray);
     }
 
-    public static void imprimirVetor(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+    public static void display(int[] array) {
+        for (int j : array) {
+            System.out.print(j + " ");
         }
         System.out.println();
     }
@@ -70,50 +83,36 @@ public class MyArrayList {
 
         return novoArray;
     }
-
     public static int[] addLast(int[] array, int number) {
-
         int[] novoArray = new int[array.length + 1];
-
         novoArray[array.length]=number;
-
         for (int i = 0; i < array.length; i++){
             novoArray[i] = array[i];
         }
-
         return novoArray;
     }
 
     public static int[] insertAt(int[] array, int indice, int number) {
-
         int[] novoArray = new int[array.length + 1];
-
         for (int i = 0; i < indice; i++) {
             novoArray[i] = array[i];
         }
-
         novoArray[indice] = number;
-
         for (int i = indice; i < array.length; i++) {
             novoArray[i + 1] = array[i];
         }
-
         return novoArray;
     }
 
     public static int[] removeFirst(int[] array) {
         int[] novoArray = new int[array.length - 1];
-
         for (int i = 0; i < novoArray.length; i++) novoArray[i] = array[i + 1];
-
         return novoArray;
     }
+
     public static int[] removeLast(int[] array) {
-
         int[] novoArray = new int[array.length - 1];
-
         for (int i = 0; i < novoArray.length; i++) novoArray[i] = array[i];
-
         return novoArray;
     }
 
