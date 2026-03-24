@@ -1,5 +1,5 @@
 # Estrutura de dados
-# ID1-List6-Part1
+# ED1-List6-Part1
 
 Este repositório contém a implementação do TAD Lista Sequencial em Java, atividade integrante da disciplina de Estrutura de Dados I. O projeto consiste no desenvolvimento da classe MyArrayList baseada em arrays, com foco no aprendizado da manipulação de índices, lógica de deslocamento de elementos (shift) e controle dinâmico de capacidade.
 
