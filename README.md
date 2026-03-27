@@ -38,10 +38,10 @@ O objetivo principal desta atividade é criar uma estrutura do zero onde os elem
 O projeto inclui:
 
 - Código em Java puro (sem frameworks).
-- Organização por exercício, onde cada classe lida com uma operação fundamental de TAD Listas.
-- Lógica de simulação de tamanho variável (alocação e cópia de memória).
-- Exercícios focados em busca e manutenção da ordem em uma coleção de dados.
-- Algoritmos de interação entre múltiplas coleções de dados.
+- Uso da interface `MyArrayListTad` para definir o contrato do Tipo Abstrato de Dados (TAD).
+- Organização lógica focada no controle de estado interno com variáveis encapsuladas (`private`).
+- Lógica de deslocamento de dados no array (shift right e shift left) para as operações de inserção e remoção.
+- Tratamento básico de erros com impressões no console para índices inválidos.
 
 ---
 
@@ -49,6 +49,7 @@ O projeto inclui:
 
 ```text
 ├── src/
+│   ├── MyArrayListTad.java
 │   └── MyArrayList.java
 ```
 
@@ -57,7 +58,7 @@ O projeto inclui:
 Antes de compilar/rodar, você precisa ter:
 
 - **Java JDK 11+** instalado
-- Uma IDE ou editor de código (IntelliJ)
+- Uma IDE ou editor de código (como IntelliJ IDEA, Eclipse ou VS Code)
 
 ## 💻 Executar o exercício
 - MyArrayList.java
